@@ -8,14 +8,37 @@ import Navbar from "./sections/Navbar";
 import Projects from "./sections/Projects";
 import Testimonials from "./sections/Testimonials";
 import Background from "./components/Background";
-
+import { useEffect } from "react";
+import gsap from "gsap";
 function App() {
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(sections) => {
+				sections.forEach((section) => {
+					if (section.isIntersecting) {
+						console.log("intersecting");
+						observer.unobserve(section.target);
+						gsap.to(section.target, { left: 0, right: 0, duration: 1 });
+						gsap.to(section.target, { visibility: "visible", duration: 0 });
+
+						// console.log(section.target);
+					}
+				});
+			},
+			{ threshold: 0.05 }
+		);
+		const sections = document.querySelectorAll(".animate-sideways");
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
+	}, []);
 	return (
 		<ThemeProvider>
 			<Box
 				sx={{
 					mx: "auto",
-					width: "min(1920px, 100%)",
+					width: "min(1920px, 97%)",
+					overflow: "hidden",
 				}}
 			>
 				<Background />
@@ -30,17 +53,33 @@ function App() {
 						"&>*:not(#navbar)": {
 							boxShadow: 10,
 						},
+						".animate-sideways": {
+							visibility: "hidden",
+							position: "relative",
+						},
+						".animate-sideways:nth-of-type(2n-1)": {
+							left: "-75%",
+						},
+						".animate-sideways:nth-of-type(2n)": {
+							left: "75%",
+						},
 					}}
 				>
 					<Navbar />
 					<Header />
 					<About />
-					<Projects />
-					<Testimonials />
-
-					<Contact />
-					{/* <Box></Box> */}
-					<Footer />
+					<Box className="animate-sideways">
+						<Projects />
+					</Box>
+					<Box className="animate-sideways">
+						<Testimonials />
+					</Box>
+					<Box className="animate-sideways">
+						<Contact />
+					</Box>
+					<Box className="animate-sideways">
+						<Footer />
+					</Box>
 				</Stack>
 			</Box>
 		</ThemeProvider>
