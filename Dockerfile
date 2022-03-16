@@ -1,9 +1,9 @@
 FROM node:lts-alpine3.14 AS build-stage
 WORKDIR /app/
 COPY package*.json /app/
-RUN npm install -f
+# RUN npm install -f
 COPY . .
-RUN npm run build
+# RUN npm run build
 
 #Step 2: Producion
 FROM nginx:1.12-alpine
