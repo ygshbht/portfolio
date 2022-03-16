@@ -41,6 +41,7 @@ function App() {
 				}}
 			>
 				<Background />
+
 				<Stack
 					spacing={{ xs: 4, sm: 6, md: 8, lg: 10 }}
 					sx={{
@@ -65,20 +66,33 @@ function App() {
 					}}
 				>
 					<Navbar />
+
 					<Header />
 					<About />
-					<Box className="animate-sideways">
-						<Projects />
-					</Box>
-					<Box className="animate-sideways">
-						<Testimonials />
-					</Box>
-					<Box className="animate-sideways">
-						<Contact />
-					</Box>
-					<Box className="animate-sideways">
-						<Footer />
-					</Box>
+					<Stack
+						spacing={{ xs: 4, sm: 6, md: 8, lg: 10 }}
+						sx={{
+							boxShadow: "none !important",
+							"&>*:not(#navbar)": {
+								boxShadow: 10,
+							},
+							maxWidth: "100%",
+							overflow: "hidden",
+						}}
+					>
+						<Box className="animate-sideways">
+							<Projects />
+						</Box>
+						<Box className="animate-sideways">
+							<Testimonials />
+						</Box>
+						<Box className="animate-sideways">
+							<Contact />
+						</Box>
+						<Box className="animate-sideways">
+							<Footer />
+						</Box>
+					</Stack>
 				</Stack>
 			</Box>
 		</ThemeProvider>
