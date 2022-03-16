@@ -16,7 +16,6 @@ function App() {
 			(sections) => {
 				sections.forEach((section) => {
 					if (section.isIntersecting) {
-						console.log("intersecting");
 						observer.unobserve(section.target);
 						gsap.to(section.target, { left: 0, right: 0, duration: 1 });
 						gsap.to(section.target, { visibility: "visible", duration: 0 });
@@ -38,7 +37,7 @@ function App() {
 				sx={{
 					mx: "auto",
 					width: "min(1920px, 97%)",
-					overflow: "hidden",
+					// overflow: "hidden",
 				}}
 			>
 				<Background />
