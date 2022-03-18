@@ -18,7 +18,7 @@ export default function Projects() {
 			<Divider></Divider>
 			<Carousel>
 				<Project
-					name="Canvas Illustration"
+					name="Canvas Illustrations"
 					imgSrc="/assets/images/canvas.jpg"
 					projectLink="https://canvas.projects.yogeshbhatt.com"
 				>
