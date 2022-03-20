@@ -24,7 +24,7 @@ export default function Projects() {
 				>
 					Some really beautiful and interactive arts, written in TypeScript. I
 					urge you to visit the site and see the work yourself. Physics
-					simulations, image manipulation, gravity, there's a quite a bit to
+					simulations, image manipulation, gravity, there's quite a bit to
 					brighten your mood.
 				</Project>
 				<Project
