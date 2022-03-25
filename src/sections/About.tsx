@@ -56,9 +56,10 @@ const AboutSection = React.forwardRef((props: AboutSectionProps, ref: any) => (
 		// boxShadow={4}
 
 		sx={{
-			// background: palette.secondary.main,
 			background: "white",
 			textAlign: "center",
+
+			// background: "linear-gradient(to left, #ff5e6211, #ff9966)",
 			...props.sx,
 		}}
 		p={5}

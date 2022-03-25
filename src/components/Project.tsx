@@ -2,18 +2,18 @@ import { Stack, Box, Typography, Link } from "@mui/material";
 
 interface ProjectProps {
 	name: string;
-	codeLink?: string;
 	children: any;
 	imgSrc: string;
 	projectLink: string;
+	codeSrc?: string;
 }
 
 export default function Project({
 	imgSrc,
 	name,
 	projectLink,
-	codeLink,
 	children,
+	codeSrc,
 }: ProjectProps) {
 	return (
 		<Box
@@ -44,9 +44,10 @@ export default function Project({
 					<Typography variant="h5">
 						<Link href={projectLink}>{name}</Link>
 					</Typography>
-					{codeLink && (
+
+					{codeSrc && (
 						<Typography>
-							<Link href={codeLink}>Source Code</Link>
+							<Link href={codeSrc}>Github</Link>
 						</Typography>
 					)}
 					<Box sx={{ overflow: "auto" }}>

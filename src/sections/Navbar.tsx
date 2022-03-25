@@ -8,13 +8,21 @@ export default function Navbar() {
 				// background: palette.secondary.main,
 
 				position: "sticky",
-				background: "white",
+				// background: "white",
+				background: "linear-gradient(to right, #E2E2E2, #C9D6FF)",
+
 				zIndex: 100,
 				top: "0",
 				fontSize: typography.h6,
 				"&>*": {
-					color: "black",
 					mx: 1,
+				},
+				"*": {
+					color: "black",
+					textDecoration: "none",
+					":hover": {
+						textDecoration: "underline",
+					},
 				},
 			})}
 			flexWrap="wrap"
