@@ -13,7 +13,6 @@ export default function Projects() {
 				// backgroundImage: "url('/white bg 2.jpg')",
 				overflow: "hidden",
 				mx: "auto",
-				width: "90%",
 			}}
 			spacing={3}
 			className="bg-cover-center"
