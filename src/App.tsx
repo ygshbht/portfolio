@@ -37,21 +37,25 @@ function App() {
 				sx={{
 					mx: "auto",
 					width: "min(1920px, 97%)",
-					// overflow: "hidden",
+					position: "relative",
 				}}
 			>
 				<Background />
+				{/* <Box mb={5}> */}
 
+				{/* </Box> */}
 				<Stack
+					// mt={3}
+					px={1}
 					spacing={{ xs: 4, sm: 6, md: 8, lg: 10 }}
 					sx={{
 						position: "relative",
 						zIndex: 1,
 						mx: "auto",
 
-						width: "min(1300px, 100%)",
+						width: "min(1350px, 100%)",
 						"&>*:not(#navbar)": {
-							boxShadow: 10,
+							// boxShadow: 10,
 						},
 						".animate-sideways": {
 							visibility: "hidden",
@@ -64,9 +68,9 @@ function App() {
 							left: "75%",
 						},
 					}}
+					pb={5}
 				>
 					<Navbar />
-
 					<Header />
 					<About />
 					<Stack
@@ -74,10 +78,10 @@ function App() {
 						sx={{
 							boxShadow: "none !important",
 							"&>*:not(#navbar)": {
-								boxShadow: 10,
+								// boxShadow: 10,
 							},
 							maxWidth: "100%",
-							overflow: "hidden",
+							// overflow: "hidden",
 						}}
 					>
 						<Box className="animate-sideways">
@@ -89,9 +93,9 @@ function App() {
 						<Box className="animate-sideways">
 							<Contact />
 						</Box>
-						<Box className="animate-sideways">
+						{/* <Box className="animate-sideways">
 							<Footer />
-						</Box>
+						</Box> */}
 					</Stack>
 				</Stack>
 			</Box>

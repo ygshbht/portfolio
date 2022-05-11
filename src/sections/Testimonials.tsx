@@ -5,13 +5,21 @@ import Testimonial from "../components/Testimonial";
 export default function Testimonials() {
 	return (
 		<Stack
-			sx={{ background: "white" }}
+			sx={{
+				overflow: "hidden",
+				// background: "white",
+				backdropFilter: "blur(15px)",
+				borderRadius: {
+					xs: "50% 200px 175px 50%",
+					md: "170% 250px 250px 100%",
+				},
+			}}
 			spacing={3}
 			alignItems="center"
-			boxShadow={4}
+			boxShadow={10}
 			p={4}
 		>
-			<Typography textAlign="center" variant="h4">
+			<Typography sx={{ px: 1 }} textAlign="center" variant="h4">
 				Testimonials
 			</Typography>
 			<Divider flexItem></Divider>

@@ -29,12 +29,12 @@ export default function About() {
 	return (
 		<Box
 			id="about"
-			boxShadow={4}
+			// boxShadow={4}
 			sx={{
-				background: "white",
+				// background: "white",
 				zIndex: 2,
 				position: "relative",
-				overflow: "hidden",
+				// overflow: "hidden",
 			}}
 		>
 			<AboutSection
@@ -53,16 +53,22 @@ interface AboutSectionProps {
 const AboutSection = React.forwardRef((props: AboutSectionProps, ref: any) => (
 	<Stack
 		ref={ref}
-		// boxShadow={4}
-
+		boxShadow={10}
 		sx={{
-			background: "white",
+			// background: "white",
+			backdropFilter: "blur(15px)",
 			textAlign: "center",
-
+			maxWidth: "100%",
+			borderRadius: {
+				md: "250px 50px 250px 50px",
+				xs: "150px 30px 150px 30px",
+			},
+			overflow: "hidden",
 			// background: "linear-gradient(to left, #ff5e6211, #ff9966)",
 			...props.sx,
 		}}
-		p={5}
+		py={5}
+		px={{ xs: 5, md: 10 }}
 		spacing={3}
 	>
 		<Typography variant="h4">Hi, I'm Yogesh. Nice to meet you</Typography>

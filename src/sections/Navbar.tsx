@@ -4,13 +4,15 @@ export default function Navbar() {
 	return (
 		<Stack
 			id="navbar"
+			boxShadow={6}
 			sx={({ palette, typography }) => ({
-				// background: palette.secondary.main,
-
 				position: "sticky",
+				backdropFilter: "blur(30px)",
+				borderRadius: "0 0 20px 20px",
 				// background: "white",
-				background: "linear-gradient(to right, #E2E2E2, #C9D6FF)",
-
+				// background: "linear-gradient(to right, #E2E2E2, #C9D6FF)",
+				left: "50%",
+				transfrom: "translateX(-50%)",
 				zIndex: 100,
 				top: "0",
 				fontSize: typography.h6,
@@ -19,17 +21,17 @@ export default function Navbar() {
 				},
 				"*": {
 					color: "black",
-					textDecoration: "none",
+					textDecoration: "none !important",
 					":hover": {
-						textDecoration: "underline",
+						textDecoration: "underline !important",
 					},
 				},
 			})}
 			flexWrap="wrap"
 			p={1}
-			boxShadow={2}
+			// boxShadow={2}
 			direction="row"
-			justifyContent="space-between"
+			justifyContent={{ xs: "space-evenly", sm: "space-between" }}
 		>
 			<Link href="#">Home</Link>
 			<Link href="#about">About</Link>

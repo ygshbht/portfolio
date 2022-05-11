@@ -6,10 +6,18 @@ export default function Projects() {
 	return (
 		<Stack
 			id="projects"
-			sx={{ backgroundImage: "url('/white bg 2.jpg')", width: "100%" }}
+			sx={{
+				// borderRadius: "170% 250px 250px 100%",
+				borderRadius: "100px 100px 700px 700px",
+				backdropFilter: "blur(15px)",
+				// backgroundImage: "url('/white bg 2.jpg')",
+				overflow: "hidden",
+				mx: "auto",
+				width: "90%",
+			}}
 			spacing={3}
 			className="bg-cover-center"
-			boxShadow={4}
+			boxShadow={10}
 			p={2}
 		>
 			<Typography variant="h4" textAlign="center">
@@ -65,7 +73,7 @@ export default function Projects() {
 			</Carousel>
 			<Typography
 				alignSelf="center"
-				sx={{ background: "white" }}
+				sx={{ px: 1, maxWidth: "250px", background: "white" }}
 				textAlign="center"
 			>
 				More work including projects done for clients can be seen&nbsp;

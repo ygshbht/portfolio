@@ -18,19 +18,22 @@ export default function Header() {
 	});
 	return (
 		<Stack
-			py={5}
+			py={{ xs: 3, md: 5 }}
+			px={{ sm: 12, lg: 6 }}
 			spacing={3}
-			boxShadow={4}
+			boxShadow={10}
 			sx={{
-				backgroundColor: "white",
-				backgroundImage: "url('/white bg.jpg')",
+				// backgroundColor: "white",
+				// backgroundImage: "url('/white bg.jpg')",
+				backdropFilter: "blur(15px)",
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
+				borderRadius: { xs: "200% 100% 30px 30px ", md: "30px 30px 280% 100%" },
 			}}
 			alignItems={"center"}
 			direction={{ xs: "column", md: "row" }}
-			justifyContent="space-evenly"
+			justifyContent="center"
 		>
 			<Box sx={{ position: "relative" }} ref={imageRef}>
 				<Avatar
@@ -38,8 +41,8 @@ export default function Header() {
 						zIndex: 1,
 						position: "relative",
 						backfaceVisibility: "hidden",
-						width: { xs: 200, md: 300, lg: 400 },
-						height: { xs: 200, md: 300, lg: 400 },
+						width: { xs: 150, md: 200, lg: 300 },
+						height: { xs: 150, md: 200, lg: 300 },
 					}}
 					alt="Yogesh"
 					src="/assets/images/yogesh.jpg"
