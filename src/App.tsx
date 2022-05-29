@@ -10,6 +10,13 @@ import Testimonials from "./sections/Testimonials";
 import Background from "./components/Background";
 import { useEffect } from "react";
 import gsap from "gsap";
+
+const colors = ["red", "green", "blue", "brown", "pink", "orange"];
+
+function getRandColor() {
+	return colors[Math.floor(Math.random() * colors.length)];
+}
+
 function App() {
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -41,16 +48,15 @@ function App() {
 				}}
 			>
 				<Background />
-				{/* <Box mb={5}> */}
-
-				{/* </Box> */}
+				<Navbar />
 				<Stack
-					// mt={3}
 					px={1}
 					spacing={{ xs: 4, sm: 6, md: 8, lg: 10 }}
 					sx={{
+						pt: { xs: 4, sm: 6, md: 8, lg: 10 },
 						position: "relative",
 						zIndex: 1,
+						overflow: "hidden",
 						mx: "auto",
 
 						width: "min(1350px, 100%)",
@@ -70,18 +76,14 @@ function App() {
 					}}
 					pb={5}
 				>
-					<Navbar />
 					<Header />
 					<About />
 					<Stack
 						spacing={{ xs: 4, sm: 6, md: 8, lg: 10 }}
 						sx={{
 							boxShadow: "none !important",
-							"&>*:not(#navbar)": {
-								// boxShadow: 10,
-							},
+							"&>*:not(#navbar)": {},
 							maxWidth: "100%",
-							// overflow: "hidden",
 						}}
 					>
 						<Box className="animate-sideways">
@@ -93,9 +95,6 @@ function App() {
 						<Box className="animate-sideways">
 							<Contact />
 						</Box>
-						{/* <Box className="animate-sideways">
-							<Footer />
-						</Box> */}
 					</Stack>
 				</Stack>
 			</Box>
